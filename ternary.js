@@ -15,11 +15,45 @@ console.log(grade);
 
 //With map()
 const nums = [1, 2, 3, 4];
-const labeled = nums.map(n =>
-  n % 2 === 0 ? "Even" : "Odd"
-);
+const labeled = nums.map((n) => (n % 2 === 0 ? "Even" : "Odd"));
 console.log(labeled);
 
 //Ternary checks the truthiness of the condition --> Falsy value: 0,"",false,null,undefined,NaN. if falsy the ternary choses the second option.
-const something = "" ? "Yes" : "No"; 
+const something = "" ? "Yes" : "No";
 console.log(something);
+
+//---------Objects-----------
+const myStop = {
+  name: "Mee",
+  age: 23,
+  isStudent: true,
+};
+console.log(myStop.name);
+
+myStop.age = 25; //updated
+console.log(myStop.age);
+
+myStop.city = "Bangkok"; //add
+console.log(myStop);
+
+//Destructuring
+const { name, age: userAge } = myStop;
+console.log(name, userAge);
+
+const user = {
+  //nested
+  name: "Jii",
+  address: {
+    city: "Bangkok",
+    country: "Thailand",
+  },
+};
+console.log(user.address.city);
+
+//Spread
+const updatedUser = {
+  ...user, //shallow copy
+  age: 30,
+};
+
+console.log(updatedUser);
